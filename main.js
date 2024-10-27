@@ -6,7 +6,10 @@ const app = Vue.createApp({
                 description: 'These are the best socks you have ever seen'
             },
             image: './assets/images/socks_blue.jpg',
-            url: 'https://google.com'
+            url: 'https://google.com',
+            inStock: true,
+            inventory: 8,
+            onSale: true
         }
     }
 })
