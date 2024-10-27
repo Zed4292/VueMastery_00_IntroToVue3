@@ -26,12 +26,18 @@
                         <ul>
                             <li v-for="detail in details">{{ detail }}</li>
                         </ul>
-                        <div v-for="variant in variants" :key="variant.id" @mouseover="updateImage(variant.image)">{{ variant.color }}</div>
+                        <div 
+                            v-for="variant in variants" 
+                            :key="variant.id" 
+                            @mouseover="updateImage(variant.image)"
+                            class="color-circle"
+                            v-bind:style="{ backgroundColor: variant.color}">
+                        </div>
                         <ul>
                             <li v-for="size in sizes">{{ size }}</li>
                         </ul>
-                        <button class="button" v-on:click="addToCart">Add to Cart</button>
-                        <button class="button" v-on:click="delFromCart">Delete from Cart</button>
+                        <button class="button" v-on:click="addToCart" v-bind:disabled="!inStock" v-bind:class="{ disabledButton: !inStock }">Add to Cart</button>
+                        <button class="button" v-on:click="delFromCart" v-bind:disabled="!allowToDeleteFromCart" v-bind:class="{ disabledButton: !allowToDeleteFromCart }">Delete from Cart</button>
                     </div>
                     <a v-bind:href="url">Link to Google</a>
                 </div>

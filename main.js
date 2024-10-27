@@ -8,6 +8,7 @@ const app = Vue.createApp({
             image: './assets/images/socks_blue.jpg',
             url: 'https://google.com',
             inStock: true,
+            allowToDeleteFromCart: false,
             inventory: 8,
             onSale: true,
             details: ['50% cotton', '30% wool', '20% polyester'],
@@ -22,13 +23,17 @@ const app = Vue.createApp({
     methods: {
         addToCart() {
             this.cart += 1
+            this.allowToDeleteFromCart = true
         },
         updateImage(variantImage){
             this.image = variantImage
         },
         delFromCart() {
-            if (this.cart > 0){
+            if (this.cart > 0) {
                 this.cart -= 1
+            }
+            if (this.cart == 0) {
+                this.allowToDeleteFromCart = false
             }
         }
     }
