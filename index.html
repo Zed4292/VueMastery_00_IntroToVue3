@@ -8,7 +8,6 @@
     <bod>
         <div id="app">
             <div class="nav-bar"></div>
-
             <div class="product-display">
                 <div class="product-container">
                     <div class="product-image">
@@ -21,14 +20,18 @@
                         <p v-if="inventory > 10">In Stock</p>
                         <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out</p>
                         <p v-else>Out of Stocks</p>
+                        <ul>
+                            <li v-for="detail in details">{{ detail }}</li>
+                        </ul>
+                        <div v-for="variant in variants" :key="variant.id">{{ variant.color }}</div>
+                        <ul>
+                            <li v-for="size in sizes">{{ size }}</li>
+                        </ul>
                     </div>
                     <a v-bind:href="url">Link to Google</a>
-
                 </div>
             </div>
-
         </div>
-
         <script src="./main.js"></script>
         <script>
             const mountedApp = app.mount('#app')
