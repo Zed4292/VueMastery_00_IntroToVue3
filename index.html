@@ -2,15 +2,18 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8"/>
-        <titel>Vue Mastery</titel>
         <link rel="stylesheet"/ href="./assets/styles.css">
-        <script src="https://unpkg.com/vue@3.15.12/dist/vue.global.js"></script>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     </head>
     <bod>
         <div id="app">
-            <h1>Product goes here</h1>
+            <h1>{{ product.name }}</h1>
+            <p>{{ product.description }}</p>
         </div>
 
         <script src="./main.js"></script>
+        <script>
+            const mountedApp = app.mount('#app')
+        </script>
     </bod>
 </html>
