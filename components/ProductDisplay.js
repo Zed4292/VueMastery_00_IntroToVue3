@@ -61,14 +61,14 @@ app.component('product-display', {
     },
     methods: {
         addToCart() {
-            this.$emit('add-to-cart')
+            this.$emit('add-to-cart', this.variants[this.selectedVariant].id)
             this.allowToDeleteFromCart = true
         },
         updateVariant(index){
             this.selectedVariant = index
         },
         delFromCart() {
-            this.$emit('del-from-cart')
+            this.$emit('del-from-cart', this.variants[this.selectedVariant].id)
         }
     
     },
