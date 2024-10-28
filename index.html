@@ -10,9 +10,11 @@
             <div class="nav-bar"></div>
 
             <div class="cart">Cart ({{ cart }})</div>
-            <product-display v-bind:premium="premium"></product-display>
-            <product-display :premium="premium"></product-display>            
-            <product-display :premium="premium"></product-display>
+            <product-display 
+                v-bind:premium="premium" 
+                @add-to-cart="updateCart"
+                @del-from-cart="deleteFromCart">
+            </product-display>
         </div>
         <script src="./main.js"></script>
 

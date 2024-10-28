@@ -6,6 +6,13 @@ const app = Vue.createApp({
         }
     },
     methods: {
-    
+        updateCart() {
+            this.cart += 1
+        },
+        deleteFromCart() {
+            if (this.cart > 0) {
+                this.cart -= 1
+            }
+        }
     }
 })

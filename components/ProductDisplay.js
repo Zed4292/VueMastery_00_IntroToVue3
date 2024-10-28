@@ -61,19 +61,14 @@ app.component('product-display', {
     },
     methods: {
         addToCart() {
-            this.cart += 1
+            this.$emit('add-to-cart')
             this.allowToDeleteFromCart = true
         },
         updateVariant(index){
             this.selectedVariant = index
         },
         delFromCart() {
-            if (this.cart > 0) {
-                this.cart -= 1
-            }
-            if (this.cart == 0) {
-                this.allowToDeleteFromCart = false
-            }
+            this.$emit('del-from-cart')
         }
     
     },
